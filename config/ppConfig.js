@@ -30,6 +30,7 @@ passport.use(new LocalStrategy({
     })
     .then(user => {
         if (!user || !user.validPassword(password)) {
+            // Why null inside cb
             cb(null, false);
         } else {
             cb(null, user);
